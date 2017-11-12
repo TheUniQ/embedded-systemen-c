@@ -298,15 +298,6 @@ void reset_settings(){
 	get_eeprom(); // zet alle settings op de standaard instellingen.
 }
 
-void update_settings(){
-	loop_until_bit_is_set(UCSR0A,RXC0);
-	unsigned char setting = UDR0; //zie command regel boven functie.
-	_delay_us(1);
-	loop_until_bit_is_set(UCSR0A,RXC0);
-	uint8_t value = UDR0;
-	set_setting(setting, value);
-}
-
 /*
 	hier kommen alle bytes die binnen komen binnen.
 	225 = send data = informatie over de gemiddelde temperatuur en licht.
@@ -354,11 +345,12 @@ void commando(){
 			break;
 			
 			case 200:
-//			unsigned char setting = UDR0; //zie command regel boven functie.
-//			_delay_us(1);
-//			uint8_t value = UDR0;
-//			set_setting(setting, value)
-			set_setting((unsigned char) UDR0, (uint8_t)UDR0);
+			loop_until_bit_is_set(UCSR0A,RXC0);
+			unsigned char setting = UDR0; //zie command regel boven functie.
+			_delay_us(1);
+			loop_until_bit_is_set(UCSR0A,RXC0);
+			uint8_t value = UDR0;
+			set_setting(setting, value);
 			break;
 			
 			case 201:
