@@ -23,11 +23,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  00000380  00000000  00000000  00003f98  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000697  00000000  00000000  00004318  2**0
+ 10 .debug_str    000006a1  00000000  00000000  00004318  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000789  00000000  00000000  000049af  2**0
+ 11 .debug_loc    00000789  00000000  00000000  000049b9  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000120  00000000  00000000  00005138  2**0
+ 12 .debug_ranges 00000120  00000000  00000000  00005142  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -205,7 +205,7 @@ void debug_led(){
  184:	90 e0       	ldi	r25, 0x00	; 0
  186:	0e 94 9c 07 	call	0xf38	; 0xf38 <eeprom_read_byte>
  18a:	80 93 2e 02 	sts	0x022E, r24	; 0x80022e <toggle_light>
- 18e:	82 e0       	ldi	r24, 0x02	; 2
+ 18e:	84 e0       	ldi	r24, 0x04	; 4
  190:	90 e0       	ldi	r25, 0x00	; 0
  192:	0e 94 9c 07 	call	0xf38	; 0xf38 <eeprom_read_byte>
  196:	80 93 7e 01 	sts	0x017E, r24	; 0x80017e <toggle_type>

@@ -6,7 +6,7 @@ void get_eeprom(){
 	min_dist = eeprom_read_byte((uint8_t *)1); //<-- moet in eeprom
 	toggle_temp = eeprom_read_byte((uint8_t *)2); //<-- moet in eeprom
 	toggle_light = eeprom_read_byte((uint8_t *)3);  //<-- moet in eeprom
-	toggle_type =  eeprom_read_byte((uint8_t *)2); //0= manual, 1=temp, 2=light, 3= temp || light, 4=temp && light //<-- moet in eeprom
+	toggle_type =  eeprom_read_byte((uint8_t *)4); //0= manual, 1=temp, 2=light, 3= temp || light, 4=temp && light //<-- moet in eeprom
 	roll_status = eeprom_read_byte((uint8_t *)101); // de status van de roll~`
 	PORTB = (roll_status * 2) + 2; // als roll status 0 is dan 2/ roll status 1 dan 4 | 0x02 is in 0x04 is out
 }
