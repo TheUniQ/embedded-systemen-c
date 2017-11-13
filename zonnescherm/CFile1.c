@@ -141,7 +141,7 @@ void get_distance(){
 	als toggle type 4 is, dan gaat hij op temperatuur en licht.
 */
 
-/*
+
 void auto_modus()
 {
 	if(toggle_type != 0)
@@ -203,8 +203,9 @@ void auto_modus()
 			}
 		}
 	}	
-}*/
+}
 
+/*
 void auto_modus(){
 	switch(toggle_type){
 		case 0:
@@ -231,7 +232,7 @@ void auto_modus(){
 		break;
 	}
 }
-
+*/
 /*
 	hier rollt hij. roll taak word toegevoegd bij de rollout/ rollin funcite, en verwijderd als deze klaar is.
 */

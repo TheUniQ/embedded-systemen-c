@@ -59,7 +59,7 @@ void uart_init(){
 }
 
 void ADC_init(){
-	ADMUX=(1<<REFS0);// For Aref=AVcc;
+	ADMUX=(1<<REFS0);
 	ADCSRA=(1<<ADEN)|(7<<ADPS0);
 }
 
