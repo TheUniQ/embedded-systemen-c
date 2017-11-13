@@ -81,7 +81,7 @@ void send_data(){
 */
 void send_info(){
 	is_connected();
-	char what[] = {'C', 'o', 'm', '_', 'R', 'e', 'n', 'e', '|', temp_is_connected, '|', licht_is_connected};
+	char what[] = {temp_is_connected, licht_is_connected};
 	for (int i = 0; i < sizeof(what); i++)	{
 		transmit(what[i]);
 	}
@@ -316,6 +316,7 @@ void reset_settings(){
 	200 syntax= 200 4 003 = zet de waarde voor de toggle |  0-4 | 0 is handmatig, 1 = temperatuur, 2= licht, 3= licht of temperatuur, 4= licht en temperatuur.
 */
 void commando(){
+	
 	if bit_is_set(UCSR0A,RXC0) {
 		uint8_t Receivedbyte = UDR0;
 		switch(Receivedbyte){
